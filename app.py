@@ -20,7 +20,7 @@ from twit import tweeter
 from fastapi import FastAPI
 
 load_dotenv()
-brwoserless_api_key = os.getenv("BROWSERLESS_API_KEY")
+scrapingant_api_key = os.getenv("SCRAPINGANT_API_KEY")
 serper_api_key = os.getenv("SERP_API_KEY")
 
 # 1. Tool for search
@@ -66,7 +66,7 @@ def scrape_website(objective: str, url: str):
     data_json = json.dumps(data)
 
     # Send the POST request
-    post_url = f"https://chrome.browserless.io/content?token={brwoserless_api_key}"
+    post_url = f"https://chrome.scrapingant.com/content?token={scrapingant_api_key}"
     response = requests.post(post_url, headers=headers, data=data_json)
     
     # Check the response status code
